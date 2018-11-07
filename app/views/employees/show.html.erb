@@ -1,7 +1,5 @@
 <h1><%= @employee.to_s %></h1>
-<div
-  <% image_tag(@employee.img_url, :class => "img_preview") %>
-</div>
+<%= image_tag(@employee.img_url, class: "img_preview") %>
 <p>Alias: <%= @employee.alias %></p>
 <p>Title: <%= @employee.title %></p>
 <p>Office: <%= @employee.office %></p>
