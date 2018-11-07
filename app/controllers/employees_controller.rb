@@ -13,13 +13,9 @@ class EmployeesController < ApplicationController
   end
 
   def create 
-    if Employee.create(emp_params).valid?
-      @emp = Employee.create(emp_params)
-      @emp.save
-    else 
-      puts "Invalid creation"
-    end
-    redirect_to employees_path
+    @emp = Employee.new(emp_params)
+    @emp.save
+    redirect_to employee_path(@emp)
   end
 
   def edit 
@@ -28,7 +24,7 @@ class EmployeesController < ApplicationController
 
   def update 
     @emp.update(emp_params)
-    redirect_to employee(@emp)
+    redirect_to employee_path(@emp)
   end
 
   def my_emp 
@@ -42,6 +38,6 @@ class EmployeesController < ApplicationController
   private 
 
   def emp_params
-    params.require(:employee).permit(:first_name, :last_name, :alias, :title, :office, :img_url)
+    params.require(:employee).permit(:first_name, :last_name, :alias, :title, :office, :img_url, :dog_id)
   end
 end
