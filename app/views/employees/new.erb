@@ -1,0 +1,26 @@
+<h1>Create Employee</h1>
+
+<%= form_for Employee.new do |form|%>
+	<%=form.label 'First Name'%>
+	<%=form.text_field :first_name%>
+	<br />
+  <%=form.label 'Last Name'%>
+	<%=form.text_field :last_name%>
+	<br />
+  <%=form.label 'Alias'%>
+	<%=form.text_field :alias%>
+	<br />
+  <%=form.label 'Title'%>
+	<%=form.text_field :title%>
+	<br />
+  <%=form.label 'Office'%>
+	<%=form.text_field :office%>
+	<br />
+	<%=form.label 'Image URL'%>
+	<%=form.text_field :img_url%>
+	<br />
+	<%=form.label 'Dog ID'%>
+	<%= form.select :dog_id, @dog_ids, :prompt => 'Select Dog Id' %>
+	<br />
+	<%= form.submit%>
+<%end%>
