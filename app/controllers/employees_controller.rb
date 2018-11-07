@@ -25,13 +25,23 @@ class EmployeesController < ApplicationController
 
     def create 
         @employee = Employee.create(employee_params)
-        
-        redirect_to employee_path(@employee)
+        if params[:id]
+            redirect_to employee_path(@employee)
+        else 
+            flash[:notice] = "Couldn't create Employee"
+            redirect_to new_employee_path
+           
+        end 
     end
 
     def update 
-        @employee.update(employee_params)
+        returning = @employee.update(employee_params)
+        if returning == nil 
+            flash[:notice] = "Couldn't edit Employee"
+            redirect_to edit_employee_path
+        else 
         redirect_to employee_path(@employee)
+        end
     end 
    
 end

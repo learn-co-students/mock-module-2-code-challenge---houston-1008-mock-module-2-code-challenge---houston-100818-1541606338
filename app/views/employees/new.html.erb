@@ -21,4 +21,9 @@
     <%= f.text_field :img_url%>
     <br />
     <%=f.submit%>
+
+    <% if flash[:notice] %>
+    <p><div class="notice"><%= flash[:notice] %></div></p>
+  <% end %>
+
 <%end%>
