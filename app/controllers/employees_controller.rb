@@ -7,12 +7,17 @@ class EmployeesController < ApplicationController
   def show 
   end 
 
+  def new 
+    @emp = Employee.new
+    @dogs = Dog.all
+  end
+
   def create 
+    @emp = Employee.new 
 
   end
 
   def edit 
-
   end
 
   def my_emp 

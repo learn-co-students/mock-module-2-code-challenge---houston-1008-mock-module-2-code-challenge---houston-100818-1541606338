@@ -1,0 +1,26 @@
+<h1>Create Employee</h1>
+
+<%= form_for @emp do |e| %>
+  <p><%= e.label :first_name%><br/>
+  <%= e.text_field :first_name%></p>
+
+  <p><%= e.label :last_name%><br/>
+  <%= e.text_field :last_name%></p>
+
+  <p><%= e.label :alias%><br/>
+  <%= e.text_field :alias%></p>
+
+  <p><%= e.label :title%><br/>
+  <%= e.text_field :title%></p>
+
+  <p><%= e.label :office%><br/>
+  <%= e.text_field :office%></p>
+
+  <p><%= e.label :img_url%><br/>
+  <%= e.text_field :img_url%></p><
+
+  <p><%= e.label "Dog" %><br/>
+  <%= e.collection_select :dog_id, @dogs, :id, :name %></p>
+
+  <p><%= e.submit %></p>
+<% end %>
