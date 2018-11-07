@@ -24,14 +24,7 @@ class EmployeesController < ApplicationController
 
   def create
     if Employee.uniq_alias_and_title?(params[:employee], @employee)
-      @employee.first_name = employee_params[:first_name]
-      @employee.last_name = employee_params[:last_name]
-      @employee.alias = employee_params[:alias]
-      @employee.title = employee_params[:title]
-      @employee.office = employee_params[:office]
-      @employee.img_url = employee_params[:img_url]
-      @employee.dog_id = employee_params[:dog_id]
-      @employee.save
+      @employee = Employee.create(employee_params)
       redirect_to @employee
     else
       redirect_to new_employee_path
