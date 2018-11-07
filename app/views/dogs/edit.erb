@@ -1,0 +1,17 @@
+<h1>Edit Dog</h1>
+
+<%= form_for @dog do |f| %>
+    <%= f.label 'Name'%>
+    <%= f.text_field :name %>
+    <br />
+    <%= f.label 'Breed'%>
+    <%= f.text_field :breed %>
+    <br />
+    <%= f.label 'Age'%>
+    <%= f.text_field :age %>
+    <br />
+    <%= f.label 'Employee'%>
+    <%= f.collection_select :employee_id, @employees, :id, :first_name, :last_name, :alias, :title, :office %>
+    <br />
+    <%= f.submit %>
+<% end %>
