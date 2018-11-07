@@ -1,0 +1,10 @@
+<h1><%= @employee.to_s %></h1>
+
+<%= image_tag(@employee.img_url, alt: "picture of #{@employee.to_s}") %>
+<br>
+<p>a.k.a. "<%= @employee.alias %>"</p>
+<p><%= @employee.title %>, <%= @employee.office %> office </p>
+
+<%= link_to "Edit", edit_employee_path(@employee)%>
+<br><br>
+<%= link_to "Go back to all employees", employees_path %>
