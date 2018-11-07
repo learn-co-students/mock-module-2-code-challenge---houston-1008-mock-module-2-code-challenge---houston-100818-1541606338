@@ -6,7 +6,7 @@ class EmployeesController < ApplicationController
       
     def create
       @employee = Employee.create(employee_params)
-      redirect_to employee_path
+      redirect_to @employee
     end
       
     def index
