@@ -1,4 +1,4 @@
-<h1>Create Employee</h1>
+<h1>Edit Employee</h1>
 
 <%= form_for @emp do |e| %>
   <p><%= e.label :first_name%><br/>
@@ -17,7 +17,7 @@
   <%= e.text_field :office%></p>
 
   <p><%= e.label :img_url%><br/>
-  <%= e.text_field :img_url%></p><
+  <%= e.text_field :img_url%></p>
 
   <p><%= e.label "Dog" %><br/>
   <%= e.collection_select :dog_id, @dogs, :id, :name %></p>
