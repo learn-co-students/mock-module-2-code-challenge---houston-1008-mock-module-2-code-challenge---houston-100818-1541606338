@@ -1,0 +1,6 @@
+<h1>Dunder Mifflen Dogs</h1>
+<% @dogs.each do |dog| %>
+    <h3> <%= link_to dog.name, dog %> </h3>
+    <p> <%= dog.breed %> </p>
+
+<% end %>
