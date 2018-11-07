@@ -1,0 +1,23 @@
+<h1>Create an Employee </h1>
+
+<%= form_for Employee.new, url: {action: "create"} do |f| %>
+    <%= f.label "First Name:"%><br>
+    <%= f.text_field :first_name %><br>
+    <%= f.label "Last Name:"%><br>
+    <%= f.text_field :last_name %><br>
+    <%= f.label "Alias:"%><br>
+    <%= f.text_field :alias %><br>
+    <%= f.label "Title:"%><br>
+    <%= f.text_field :title %><br>
+    <%= f.label "Office:"%><br>
+    <%= f.text_field :office %><br>
+    <%= f.label "Image:"%><br>
+    <%= f.text_field :img_url%><br>
+    <%= f.label "Dog"%><br>
+    <%= f.collection_select(:dog_id, Dog.all, :id, :name) %>  <br>
+    <%= f.submit%>
+
+
+
+<% end %>
+    
