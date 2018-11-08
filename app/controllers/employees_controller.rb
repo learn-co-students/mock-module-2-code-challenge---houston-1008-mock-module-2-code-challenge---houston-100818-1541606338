@@ -23,11 +23,11 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    if Employee.uniq_alias_and_title?(params[:employee], @employee)
-      @employee = Employee.create(employee_params)
-      redirect_to @employee
+    @employee = Employee.create(employee_params)
+    if @employee.errors.any?
+      render :new
     else
-      redirect_to new_employee_path
+      redirect_to @employee
     end
   end
 
@@ -39,11 +39,11 @@ class EmployeesController < ApplicationController
   end
 
   def update
-    if Employee.uniq_alias_and_title?(params[:employee], @employee)
-      @employee.update(employee_params)
-      redirect_to @employee
+    @employee.update(employee_params)
+    if @employee.errors.any?
+      render :show
     else
-      redirect_to edit_employee_path
+      redirect_to @employee
     end
   end
 
