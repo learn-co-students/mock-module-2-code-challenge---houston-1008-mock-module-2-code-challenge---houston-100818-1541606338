@@ -1,0 +1,21 @@
+<h1><%= @employee.to_s %></h1>
+<% if @employee.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@employee.errors.count, "error") %>
+      prohibited this employee from being saved:
+    </h2>
+
+    <ul>
+    <% @employee.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+</div>
+<% end %>
+<%= image_tag(@employee.img_url, class: "img_preview") %>
+<p>Alias: <%= @employee.alias %></p>
+<p>Title: <%= @employee.title %></p>
+<p>Office: <%= @employee.office %></p>
+<p>Dog: <%= link_to @employee.dog.name, @employee.dog %></p>
+<p><%= link_to "Edit", edit_employee_path %></p>
